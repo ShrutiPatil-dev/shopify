@@ -4,7 +4,7 @@ import { CartProvider } from './context/CartContext'
 import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage'
 import Cart from './components/Cart'
-import Productdetail from './pages/Productdetail'
+import Productdetail from './pages/ProductDetail'
 import ProductList from './components/ProductList'
 import About from './components/About'
 

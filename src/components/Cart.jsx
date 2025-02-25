@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { NavLink } from 'react-router-dom';
 
 function Cart() {
    const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
@@ -13,8 +14,16 @@ function Cart() {
 
    if (cartItems.length === 0) {
       return (
-         <div>
-            <h2 className="text-2xl text-center p-3 font-semibold m-6">Your Cart is Empty</h2>
+         <div className='flex flex-col justify-center items-center bg-gray-100 w-3/4 p-10 m-auto mt-10 rounded-md'>
+           
+            <h2 className="text-4xl text-center p-3  m-6">Your Cart is Empty</h2>
+
+            <NavLink  
+            to={'/list'}
+            className="mt-4 bg-neutral-800 text-white rounded-md w-58 h-10 px-7 py-2  hover:bg-neutral-700 transition-colors duration-200"
+            >
+            Continue Shopping
+          </NavLink>
          </div>
       );
    }
@@ -24,7 +33,7 @@ function Cart() {
          <h2 className="text-3xl font-bold mb-6 text-center m-2">Your Cart</h2>
          <div>
             {cartItems.map((item) => (
-               <div key={item.id} className="flex flex-col md:flex-row text-center items-center bg-white p-4 m-6 border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+               <div key={item.id} className="flex flex-col md:flex-row text-center items-center bg-white p-2 m-2 border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                   <div className='flex-shrink-0'>
                      <img className="w-24 lg:h-24 object-cover" src={item.image} alt={item.name} />
                   </div>
@@ -71,10 +80,16 @@ function Cart() {
             </div>
          </div>
 
-         <div className="flex justify-center mt-6">
-            <button className="bg-neutral-800 text-white px-3 py-2 rounded-md hover:bg-neutral-700 transition-colors duration-200">
+         <div className="flex flex-col md:flex-row gap-2 md:gap-3 justify-center items-center my-6">
+            <button className="mt-4 bg-neutral-800  text-white rounded-md px-7 py-2  hover:bg-neutral-700 transition-colors duration-200">
                Proceed to Checkout
             </button>
+            <NavLink  
+            to={'/list'}
+            className="mt-4 bg-neutral-800  text-white text-center rounded-md px-7 py-2  hover:bg-neutral-700 transition-colors duration-200"
+            >
+            Continue Shopping
+          </NavLink>
          </div>
       </div>
    );

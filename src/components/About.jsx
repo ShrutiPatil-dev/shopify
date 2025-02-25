@@ -34,10 +34,10 @@ function About() {
 
       <h2 className='text-center text-lg lg:text-2xl text-neutral-800 m-6 font-semibold'>Our Products</h2> 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  '>
-        {aboutList.map((item) =>(
-            <div className='flex flex-col justify-center items-center'>
-               <img className="w-64 h-58" src={item.image} alt={item.name}/>
-               <h2 className='text-lg m-4'>{item.name}</h2>
+        {aboutList.map((item,index) =>(
+            <div key={index} className='flex flex-col justify-center items-center'>
+               <img className="w-64 h-58 " src={item.image} alt={item.name}/>
+               <h2 className='text-lg m-4 font-semibold'>{item.name}</h2>
             </div>
         ))}
       </div>    

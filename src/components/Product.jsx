@@ -1,29 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Product({ product, addToCart }) {
-  const handleAddToCart = () => {
-    addToCart(product);
-  };
+function Product({ product}) {
+ 
 
   return (
-    <div className="flex flex-col items-center p-4 h-[450px] m-5">
-      <img className="w-48 h-72 object-cover" src={product.image} alt={product.name} />
-      <h3 className="text-md font-semibold mt-4">{product.name}</h3>
+    <NavLink to={`/product/${product.id}`} className="flex flex-col justify-center items-center p-2 mb-4">
+       <img className=" w-56 h-64 md:w-48 md:h-72 object-cover" src={product.image} alt={product.name} />
+       <h2 className="mt-2 overflow-hidden text-center h-6 sm:h-auto font-semibold">{product.name}</h2>
       <p className="text-gray-600 mt-2">Rs. {product.price}</p>
-      <div className="flex">
-        <NavLink to={`/product/${product.id}`} className="bg-neutral-800 text-white px-3 text-sm py-2 m-1 rounded-md hover:bg-neutral-700 transition-colors duration-200">
-          Buy Now
-        </NavLink>
-        <NavLink to={'/cart'}
-          onClick={handleAddToCart}
-          className="bg-neutral-800 text-white px-3 text-sm py-2 m-1 rounded-md hover:bg-neutral-700 transition-colors duration-200"
-        >
-          Add to Cart
-        </NavLink>
-      </div>
-    </div>
+      
+      </NavLink>
+
+      
+    
   );
 }
 
 export default Product;
+        

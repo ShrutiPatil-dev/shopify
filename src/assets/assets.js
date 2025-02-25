@@ -65,23 +65,25 @@ export const productData = [
         image: Woman2,
         desc:"Short skort in rigid cotton denim with a high waist and a wrapover front. Diagonal front pockets and a concealed zip at the back.",
         category: "Woman",
-        price: "1,499"
+        price: "1,499.00"
     },
     {
+
         id:3,
-        name: 'Regular Fit T-shirt',
-        image: Man4,
-        desc:"T-shirt in lightweight cotton jersey with a round, rib-trimmed neckline and a straight-cut hem. Regular fit for comfortable wear and a classic silhouette.",
-        category: "Man",
-        price: "399.00"
-    },
-    {
-        id:4,
         name: 'Linen-blend suit waistcoat',
         image: Woman3,
         desc:"Waistcoat in a linen and viscose weave with a V-neck and buttons down the front. Shaping darts at the waist and welt front pockets. Lined.",
         category: "Woman",
         price: "2,999.00"
+        
+    },
+    {
+        id:4,
+        name: 'Regular Fit T-shirt',
+        image: Man4,
+        desc:"T-shirt in lightweight cotton jersey with a round, rib-trimmed neckline and a straight-cut hem. Regular fit for comfortable wear and a classic silhouette.",
+        category: "Man",
+        price: "399.00"
     },
     {
         id:5,

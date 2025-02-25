@@ -38,7 +38,7 @@ function HomePage() {
     </div>
     <h1 className='text-center text-xl lg:text-3xl text-neutral-800 font-semibold m-2'>Latest Product</h1>
     <hr className='m-12 mt-5'/>
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+    <div className='grid grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 m-2'>
         
     {
         productData.map((product) =>(

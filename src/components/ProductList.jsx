@@ -66,17 +66,14 @@ function ProductList() {
                 <button onClick={() => setSelectedCategory('Man')} className="text-neutral-800 hover:underline p-1 font-semibold m-2">Men</button>
                 <button onClick={() => setSelectedCategory('Kids')} className="text-neutral-800 hover:underline p-1 font-semibold m-2">Kids</button>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+            <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
                 {filteredProducts.map((product) => (
-                    <div key={product.id} className="flex flex-col items-center p-4 h-[450px] m-5 text-center bg-white border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <img className="w-48 h-72 object-cover" src={product.image} alt={product.name} />
-                        <h3 className="text-md font-semibold mt-4">{product.name}</h3>
+                    <NavLink to={`/product/${product.id}`} key={product.id} className="flex flex-col items-center p-1 m-2 text-center">
+                        <img className="w-56 h-64 md:w-48 md:h-72 object-cover" src={product.image} alt={product.name} />
+                        <h3 className="mt-2 overflow-hidden text-center h-6 sm:h-auto font-semibold">{product.name}</h3>
                         <p className="text-gray-600 mt-2">Rs. {product.price}</p>
-                        <div className="flex">
-                            <NavLink to={`/product/${product.id}`} className="bg-neutral-800 text-white px-3 text-sm py-2 m-1 rounded-md hover:bg-neutral-700 transition-colors duration-200">Buy Now</NavLink>
-                            <NavLink to={'/cart'} onClick={() => handleAddToCart(product)} className="bg-neutral-800 text-white px-3 text-sm py-2 m-1 rounded-md hover:bg-neutral-700 transition-colors duration-200">Add to Cart</NavLink>
-                        </div>
-                    </div>
+                        
+                    </NavLink>
                 ))}
             </div>
         </>
